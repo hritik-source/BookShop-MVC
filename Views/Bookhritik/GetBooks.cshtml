@@ -1,0 +1,40 @@
+@model IEnumerable<bookshop.Models.Bookhritik>
+    
+    <h1>Hello @ViewBag.Username</h1>
+    
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th> BookId </th>
+            <th> AuthorId </th>
+            <th> Title </th>
+            <th> Year Published </th>
+            <th> Price </th>
+            <th> Genre </th>
+            <th> other options</th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.Bookid</td>
+                <td> @item.Authorid</td>
+                <td> @item.Title</td>
+                <td> @item.Year</td>
+                <td> @item.Price</td>
+                <td> @item.Genre</td>
+                <td> <a class="btn btn-info" asp-action="Edit"      asp-route-id="@item.Bookid"> Edit </a> </td>
+                <td> <a class="btn btn-warning" asp-action="Details"   asp-route-id="@item.Bookid"> Know More </a> </td>
+                <td> <a class="btn btn-danger" asp-action="Delete"     asp-route-id="@item.Bookid"> Delete </a> </td>
+            </tr>
+        }
+
+    </table>
+
+
+
+
+
+
+    

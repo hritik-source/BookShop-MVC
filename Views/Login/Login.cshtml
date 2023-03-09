@@ -1,0 +1,39 @@
+@model bookshop.Models.Bookuserhritik
+
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="col d-flex justify-content-center">
+<h1 >Login</h1>
+</div>
+
+
+<hr />
+<div class="row mb-4">
+    <div class="col d-flex justify-content-center">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-outline mb-4">
+                <label asp-for="Uname" class="form-control"></label>
+                <input asp-for="Uname" class="form-control" />
+                <span asp-validation-for="Uname" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <label asp-for="Password" class="form-control"></label>
+                <input asp-for="Password" type="password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-outline mb-4">
+                <div class="col d-flex justify-content-center">
+                <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

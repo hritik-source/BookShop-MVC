@@ -1,0 +1,26 @@
+@model IEnumerable<bookshop.Models.Bookhritik>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th> BookId </th>
+            <th> AuthorId </th>
+            <th> Title </th>
+            <th> Year Published </th>
+            <th> Price </th>
+            <th> Genre </th>
+        </tr>
+
+         @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.Bookid</td>
+                <td> @item.Authorid</td>
+                <td> @item.Title</td>
+                <td> @item.Year</td>
+                <td> @item.Price</td>
+                <td> @item.Genre</td>
+            </tr>
+        }
+
+    </table>

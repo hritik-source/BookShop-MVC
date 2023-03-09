@@ -1,0 +1,64 @@
+@model bookshop.Models.Bookhritik
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add the Books</h1>
+
+<hr />
+<div class="row-md-4">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Bookid" class="control-label"></label>
+                <input asp-for="Bookid" class="form-control" />
+                <span asp-validation-for="Bookid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authorid" class="control-label"></label>
+                <input asp-for="Authorid" class="form-control" />
+                @* <select asp-items="@ViewBag.Authorhritiks"></select> *@
+                <span asp-validation-for="Authorid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label"></label>
+                <input asp-for="Year" class="form-control" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Genre" class="control-label"></label>
+                <input asp-for="Genre" class="form-control" />
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+            <div class="mt-4">
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success mr-10" />
+                <a class="btn btn-dark" asp-action="GetBooks">Back to List</a>
+            
+            </div>
+
+            
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
